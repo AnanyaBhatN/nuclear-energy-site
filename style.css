@@ -1,42 +1,49 @@
-/* Custom Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-track {
-    background: transparent;
+  width: 8px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #cbd5e1;
-    border-radius: 4px;
+  background: #94a3b8;
+  border-radius: 4px;
 }
 .dark ::-webkit-scrollbar-thumb {
-    background-color: #475569;
+  background: #475569;
 }
 
-/* Glass Navigation Effect */
+/* Glass Nav */
 .glass-nav {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
 }
 .dark .glass-nav {
-    background: rgba(15, 23, 42, 0.85);
+  background: rgba(15,23,42,0.85);
 }
 
-/* Navigation Link Underline Animation */
+/* Nav underline */
 .nav-link {
-    position: relative;
+  position: relative;
+  font-weight: 600;
 }
 .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #0ea5e9;
-    transition: width 0.3s ease;
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #0ea5e9;
+  transition: width 0.3s;
 }
-.nav-link:hover::after, .nav-link.active::after {
-    width: 100%;
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Slow spin */
+@keyframes spinSlow {
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
 }
