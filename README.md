@@ -5,7 +5,7 @@ The project focuses on making complex scientific ideas accessible to students an
 ---
 
 ## 🌐 Live Demo
-https://ananyabhatn.github.io/nuclear-energy-site/
+ananyabhatn.github.io/nuclear-energy-site/
 
 ---
 
