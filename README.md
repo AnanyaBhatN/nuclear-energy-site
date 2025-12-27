@@ -4,8 +4,7 @@ Nuclear Energy – Simplified is an educational web application designed to expl
 The project focuses on making complex scientific ideas accessible to students and beginners through a modern user interface and well-organized content.
 ---
 
-## 🌐 Live Demo
-ananyabhatn.github.io/nuclear-energy-site/
+📍 **Live Demo:** https://ananyabhatn.github.io/nuclear-energy-site/
 
 ---
 
