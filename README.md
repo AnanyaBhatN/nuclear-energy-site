@@ -57,4 +57,25 @@ Each section uses a consistent **“Continue” CTA** to reduce cognitive load a
 ---
 
 ## 📁 Project Structure
+nuclear-energy-site/
+│── index.html
+│── style.css
+│── script.js
+│── assets/
+│ └── screenshots/
+
+---
+
+## 👩‍💻 Author
+
+**Ananya Bhat N**  
+MCA Student | UI/UX & Frontend Enthusiast  
+
+This project was built as part of my **UI/UX internship preparation**, focusing on clarity, flow, and user-centered design.
+
+---
+
+## 📌 Note
+
+This project is educational in nature and aims to make nuclear energy concepts more accessible to students and non-technical audiences.
 
