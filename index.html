@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuclear Energy | The Modern Perspective</title>
+    
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        nuclear: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-dark-900 dark:text-slate-200 transition-colors duration-300 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center cursor-pointer group" onclick="router.navigate('home')">
+                    <div class="w-10 h-10 bg-gradient-to-br from-nuclear-500 to-cyan-400 rounded-xl flex items-center justify-center mr-3 shadow-lg shadow-nuclear-500/20 group-hover:shadow-nuclear-500/40 transition-all duration-300">
+                        <i class="fa-solid fa-atom text-white text-lg animate-spin-slow" style="animation-duration: 10s;"></i>
+                    </div>
+                    <span class="font-heading font-bold text-xl tracking-tight text-slate-900 dark:text-white">
+                        Atomic<span class="text-nuclear-600 dark:text-nuclear-400">Insight</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <button onclick="router.navigate('home')" class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-nuclear-600 dark:hover:text-nuclear-400 transition" id="nav-home">Home</button>
+                    <button onclick="router.navigate('basics')" class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-nuclear-600 dark:hover:text-nuclear-400 transition" id="nav-basics">Basics</button>
+                    <button onclick="router.navigate('working')" class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-nuclear-600 dark:hover:text-nuclear-400 transition" id="nav-working">Mechanics</button>
+                    <button onclick="router.navigate('benefits')" class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-nuclear-600 dark:hover:text-nuclear-400 transition" id="nav-benefits">Benefits</button>
+                    <button onclick="router.navigate('risks')" class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-red-500 dark:hover:text-red-400 transition" id="nav-risks">Risks</button>
+                    <button onclick="router.navigate('myths')" class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-nuclear-600 dark:hover:text-nuclear-400 transition" id="nav-myths">Myths</button>
+                    <button onclick="router.navigate('today')" class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-nuclear-600 dark:hover:text-nuclear-400 transition" id="nav-today">Future</button>
+                    <button onclick="router.navigate('resources')" class="nav-link text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-nuclear-600 dark:hover:text-nuclear-400 transition" id="nav-resources">Resources</button>
+                    
+                    <!-- Theme Toggle -->
+                    <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors duration-200 focus:outline-none" aria-label="Toggle Dark Mode">
+                        <i class="fa-solid fa-moon text-slate-600 dark:text-slate-300 text-lg hidden dark:block"></i>
+                        <i class="fa-solid fa-sun text-slate-600 dark:text-slate-300 text-lg block dark:hidden"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center lg:hidden gap-4">
+                    <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                        <i class="fa-solid fa-moon text-slate-600 dark:text-slate-300 hidden dark:block"></i>
+                        <i class="fa-solid fa-sun text-slate-600 dark:text-slate-300 block dark:hidden"></i>
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="text-slate-600 dark:text-slate-300 hover:text-nuclear-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-dark-900 border-t border-slate-100 dark:border-slate-800 absolute w-full left-0 shadow-lg">
+            <div class="px-4 py-3 space-y-1">
+                <button onclick="router.navigate('home'); toggleMobileMenu()" class="block w-full text-left px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Home</button>
+                <button onclick="router.navigate('basics'); toggleMobileMenu()" class="block w-full text-left px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">The Basics</button>
+                <button onclick="router.navigate('working'); toggleMobileMenu()" class="block w-full text-left px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">How it Works</button>
+                <button onclick="router.navigate('benefits'); toggleMobileMenu()" class="block w-full text-left px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Benefits</button>
+                <button onclick="router.navigate('risks'); toggleMobileMenu()" class="block w-full text-left px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Risks</button>
+                <button onclick="router.navigate('myths'); toggleMobileMenu()" class="block w-full text-left px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Myths</button>
+                <button onclick="router.navigate('today'); toggleMobileMenu()" class="block w-full text-left px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Future</button>
+                <button onclick="router.navigate('resources'); toggleMobileMenu()" class="block w-full text-left px-4 py-3 text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg">Resources</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Injection Area -->
+    <main id="app" class="flex-grow pt-16">
+        <!-- Content loads here dynamically -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-dark-900 border-t border-slate-200 dark:border-slate-800 py-12 mt-auto transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <div class="flex items-center mb-4">
+                    <i class="fa-solid fa-atom text-nuclear-500 mr-2 text-xl"></i>
+                    <span class="font-heading font-bold text-lg text-slate-900 dark:text-white">AtomicInsight</span>
+                </div>
+                <p class="text-sm text-slate-500 dark:text-slate-400 max-w-sm leading-relaxed">
+                    Demystifying nuclear physics for the modern world. Dedicated to providing balanced, scientific, and accessible information about the power of the atom.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-slate-900 dark:text-white font-bold mb-4 text-sm uppercase tracking-wider">Explore</h4>
+                <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+    <li><button onclick="router.navigate('home')" class="hover:text-nuclear-600 dark:hover:text-nuclear-400 transition">Home</button></li>
+    <li><button onclick="router.navigate('basics')" class="hover:text-nuclear-600 dark:hover:text-nuclear-400 transition">Atomic Structure</button></li>
+    <li><button onclick="router.navigate('working')" class="hover:text-nuclear-600 dark:hover:text-nuclear-400 transition">Reactor Mechanics</button></li>
+    <li><button onclick="router.navigate('benefits')" class="hover:text-nuclear-600 dark:hover:text-nuclear-400 transition">Benefits</button></li>
+    <li><button onclick="router.navigate('risks')" class="hover:text-nuclear-600 dark:hover:text-nuclear-400 transition">Safety Protocols</button></li>
+    <li><button onclick="router.navigate('myths')" class="hover:text-nuclear-600 dark:hover:text-nuclear-400 transition">Common Myths</button></li>
+    <li><button onclick="router.navigate('today')" class="hover:text-nuclear-600 dark:hover:text-nuclear-400 transition">Future Tech</button></li>
+    <li><button onclick="router.navigate('resources')" class="hover:text-nuclear-600 dark:hover:text-nuclear-400 transition">Resources</button></li>
+</ul>
+            </div>
+            
+        </div>
+       <div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 text-center text-xs text-slate-400">
+    Designed & developed by Ananya Bhat N.
+</div>
+
+    </footer>
+
+    <!-- Main Logic File -->
+    <script src="script.js"></script>
+</body>
+</html>
